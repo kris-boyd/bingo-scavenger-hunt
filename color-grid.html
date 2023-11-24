@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            grid-template-rows: repeat(5, 100px);
+            gap: 5px;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid" id="grid"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const grid = document.getElementById('grid');
+
+        // Create the grid
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                const square = document.createElement('div');
+                square.className = 'square';
+                square.addEventListener('click', function () {
+                    toggleColor(square);
+                });
+                grid.appendChild(square);
+            }
+        }
+
+        // Function to toggle the color
+        function toggleColor(square) { 
+            const currentColor = window.getComputedStyle(square, null).getPropertyValue('background-color');
+            console.log("current color is ", currentColor);
+            const newColor = currentColor == 'rgb(255, 0, 0)' ? 'blue' : 'red';
+            console.log("new color is ", newColor);
+            square.style.backgroundColor = newColor;
+        }
+    });
+</script>
+
+</body>
+</html>

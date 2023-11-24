@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Grid</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vw;
+            margin: 0;
+        }
+
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .grid-item {
+            flex: 1 0 20%; /* 20% width for each item, adjust as needed */
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff; /* Add a border for separation */
+            cursor: pointer; /* Add pointer cursor for better UX */
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Grid container -->
+    <div class="grid-container">
+        <!-- Grid items -->
+        <div class="grid-item" onclick="changeColor(this)"><img src="moon.png" alt="Icon 1"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="package.png" alt="Icon 2"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="pineapple.png" alt="Icon 3"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="pizza.png" alt="Icon 4"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="skunk.png" alt="Icon 5"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="sleeping.png" alt="Icon 6"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="sushi-roll.png" alt="Icon 7"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="tofu.png" alt="Icon 8"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="goat.png" alt="Icon 9"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="fox.png" alt="Icon 10"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="goat.png" alt="Icon 11"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="fox.png" alt="Icon 12"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="fox.png" alt="Icon 13"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="goat.png" alt="Icon 14"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="goat.png" alt="Icon 15"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="fox.png" alt="Icon 16"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="fox.png" alt="Icon 17"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="fox.png" alt="Icon 18"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="fox.png" alt="Icon 19"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="goat.png" alt="Icon 20"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="fox.png" alt="Icon 21"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="fox.png" alt="Icon 22"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="goat.png" alt="Icon 23"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="fox.png" alt="Icon 24"></div>
+        <div class="grid-item" onclick="changeColor(this)"><img src="goat.png" alt="Icon 25"></div>
+      </div>
+
+    <script>
+        function changeColor(element) {
+            // Generate a random color (hex format)
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+            // Apply the random color to the clicked element
+            element.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
