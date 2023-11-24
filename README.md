@@ -6,7 +6,7 @@ Created for use while watching the online, filmed version of the theatre product
 
 ## Getting Started
 
-This is a simple static html page, and sample icons from flaticon. Please replace with
+This is a simple static html page, and icons from flaticon. Please replace with your own, do not use icons without proper attribution.
 
 ### Installing
 
