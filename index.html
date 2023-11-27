@@ -83,12 +83,17 @@
   </div>
 
     <script>
+      let foundCount = 0;
       function changeColor(element) {
           //get grid-item's current color
           const currentColor = window.getComputedStyle(element, null).getPropertyValue('background-color');
           //if it's grey change to blue, otherwise change back to grey
           const newColor = currentColor == 'rgb(204, 204, 204)' ? 'blue' : 'rgb(204, 204, 204)';
           element.style.backgroundColor = newColor;
+          newColor == "blue" ? foundCount +=1 : foundCount -= 1;
+          console.log(foundCount);
+          if (foundCount >= 4) {
+            window.location.href = "complete.html" } 
       }
   </script>
 </body>
