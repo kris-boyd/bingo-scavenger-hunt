@@ -14,13 +14,14 @@
         <p>Send us your name and favourite part of The East Van Panto to enter a draw to win 2 tickets to next year's Panto</p>
         <form name="scavenger-hunt-complete" method="POST" data-netlify="true">
             <div class="mb-3">
-                <label class="form-label">Your Name: <input type="text" name="name" class="form-control" aria-describedby=""/></label>
+                <label class="form-label col-6 ">Your Name: <input type="text" name="name" class="form-control" aria-describedby=""/></label>
+                <br>
+                <label class="form-label mt-4 col-6">Favorite part of the Panto<input type="text" class="form-control" name="favorite-part" aria-describedby=""></label>
+                <br>
+
+                <label class="form-label mt-4 col-6">Email address<input type="email" class="form-control" name="email" aria-describedby=""></label>
                 
-                <label for="favorite-part" class="form-label mt-4 ">Favorite part of the Panto</label>
-                <input type="text" class="form-control" id="favorite-part" aria-describedby="">
-                <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div id="emaildisclaimer" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             
             <div class="mb-3 form-check">
