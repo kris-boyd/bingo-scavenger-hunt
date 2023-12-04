@@ -9,27 +9,35 @@
     <style>  
         body {
            font-family: 'Tiempo', sans-serif;
+           background-color:#C69BFD;
+           background-color: #aad9f4;
         }
         main {
           display: flex;
           justify-content: center;
         }
+
+        h1 {
+          font-size: 2.3rem;
+        }
+
         .grid-container {
           display: flex;
           flex-wrap: wrap;
           height: 98vw;
           width: 98vw;
           padding-top: 10px;
+          margin-bottom: 10px;
         }
         .grid-item {
             flex: 1 0 20%; /* 20% width for each item, adjust as needed */
             box-sizing: border-box;
             padding: 7px;
-            background-color: #ccc;
+            background-color: #f5d1d4;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 5px solid #fff; /* Add a border for separation */
+            border: 4px solid #aad9f4; /* Add a border for separation */
             border-radius: 20px;
             cursor: pointer;
         }
@@ -40,6 +48,7 @@
         }
         .panto {
           background-color: transparent;
+          cursor: auto;
         }
 
         @media screen and (min-width:1024px) {
@@ -65,16 +74,16 @@
     </nav>
   </header>
 
-<h1 class="text-center p-2">Beauty & The Beast</h1>
-<h1 class="text-center p-2">Scavenger Hunt!</h1>
+<h1 class="text-center fw-bold p-2">Beauty & The Beast</h1>
+<h1 class="text-center fw-bold p-2">Scavenger Hunt!</h1>
 <main>
   <div class="grid-container">
     <!-- Grid items -->
-    <div class="grid-item panto" onclick="changeColor(this)"><img src="panto-P.png" alt="P"></div>
-    <div class="grid-item panto" onclick="changeColor(this)"><img src="panto-A.png" alt="A"></div>
-    <div class="grid-item panto" onclick="changeColor(this)"><img src="panto-N.png" alt="N"></div>
-    <div class="grid-item panto" onclick="changeColor(this)"><img src="panto-T.png" alt="T"></div>
-    <div class="grid-item panto" onclick="changeColor(this)"><img src="panto-O.png" alt="O"></div>
+    <div class="grid-item panto" ><img src="panto-P.png" alt="P"></div>
+    <div class="grid-item panto" ><img src="panto-A.png" alt="A"></div>
+    <div class="grid-item panto" ><img src="panto-N.png" alt="N"></div>
+    <div class="grid-item panto" ><img src="panto-T.png" alt="T"></div>
+    <div class="grid-item panto" ><img src="panto-O.png" alt="O"></div>
     <div class="grid-item" onclick="changeColor(this)"><img src="skunk.png" alt="Skunk"></div>
     <div class="grid-item" onclick="changeColor(this)"><img src="uramaki.png" alt="Salmon Roll Sushi"></div>
     <div class="grid-item" onclick="changeColor(this)"><img src="shoyu.png" alt="Soy Sauce"></div>
@@ -95,11 +104,35 @@
     <div class="grid-item" onclick="changeColor(this)"><img src="book.png" alt="Belle's Book"></div>
     <div class="grid-item" onclick="changeColor(this)"><img src="tomato.png" alt="Tomato"></div>
     <div class="grid-item" onclick="changeColor(this)"><img src="" alt="one more"></div>
-   
   </div>
-
-
 </main>
+<div class="container">
+  <h2 class="pt-3 px-2">Can you find these items while watching the Panto?</h2>
+  <p class="px-2">It could be a costume, a prop, or something in the background. Click on them when you see them. Find all 20 to enter to win!</p>
+  <ol class="list-group list-group-numbered">
+    <li class="list-group-item">Skunk</li>
+    <li class="list-group-item">Salmon Roll Sushi</li>
+    <li class="list-group-item">Soy Sauce</li>
+    <li class="list-group-item">50% Off Sticker</li>
+    <li class="list-group-item">Pillow</li>
+    <li class="list-group-item">Cherry Blossoms</li>
+    <li class="list-group-item">Cardboard Box</li>
+    <li class="list-group-item">Tofu</li>
+    <li class="list-group-item">Moon</li>
+    <li class="list-group-item">Mouse</li>
+    <li class="list-group-item">Pineapple</li>
+    <li class="list-group-item">Coffee Cup</li>
+    <li class="list-group-item">Scarf</li>
+    <li class="list-group-item">Drum Kit</li>
+    <li class="list-group-item">Mustache</li>
+    <li class="list-group-item">Mattress</li>
+    <li class="list-group-item">Good Luck Cat</li>
+    <li class="list-group-item">Belle's book</li>
+    <li class="list-group-item">Tomato</li>
+    <li class="list-group-item">One more thing</li>
+  </ol>
+</div>
+
   
 
     <script>
@@ -108,7 +141,7 @@
           //get grid-item's current color
           const currentColor = window.getComputedStyle(element, null).getPropertyValue('background-color');
           //if it's grey change to blue, otherwise change back to grey
-          const newColor = currentColor == 'rgb(204, 204, 204)' ? 'blue' : 'rgb(204, 204, 204)';
+          const newColor = currentColor == 'rgb(245, 209, 212)' ? 'blue' : 'rgb(245, 209, 212)';
           element.style.backgroundColor = newColor;
           newColor == "blue" ? foundCount +=1 : foundCount -= 1;
           console.log(foundCount);
