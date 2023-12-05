@@ -1,153 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panto Scavenger Hunt</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiempo:wght@400;700&display=swap" />
-    <style>  
-        body {
-           font-family: 'Tiempo', sans-serif;
-           background-color:#C69BFD;
-           background-color: #aad9f4;
-        }
-        main {
-          display: flex;
-          justify-content: center;
-        }
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Tiempo:wght@400;700&display=swap"
+    />
+    <style>
+      body {
+        font-family: "Tiempo", sans-serif;
+        background-color: #c69bfd;
+        background-color: #aad9f4;
+      }
+      main {
+        display: flex;
+        justify-content: center;
+      }
 
-        h1 {
-          font-size: 2.3rem;
-        }
+      h1 {
+        font-size: 2.3rem;
+      }
 
+      .grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 98vw;
+        width: 98vw;
+        padding-top: 10px;
+        margin-bottom: 10px;
+      }
+      .grid-item {
+        flex: 1 0 20%; /* 20% width for each item, adjust as needed */
+        box-sizing: border-box;
+        padding: 7px;
+        background-color: #f5d1d4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid #aad9f4; /* Add a border for separation */
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      .grid-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .panto {
+        background-color: transparent;
+        cursor: auto;
+      }
+
+      @media screen and (min-width: 1024px) {
         .grid-container {
-          display: flex;
-          flex-wrap: wrap;
-          height: 98vw;
-          width: 98vw;
-          padding-top: 10px;
-          margin-bottom: 10px;
+          height: 98vh;
+          width: 98vh;
         }
+
         .grid-item {
-            flex: 1 0 20%; /* 20% width for each item, adjust as needed */
-            box-sizing: border-box;
-            padding: 7px;
-            background-color: #f5d1d4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 4px solid #aad9f4; /* Add a border for separation */
-            border-radius: 20px;
-            cursor: pointer;
+          padding: 10px;
         }
-          .grid-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .panto {
-          background-color: transparent;
-          cursor: auto;
-        }
-
-        @media screen and (min-width:1024px) {
-          .grid-container {
-            height: 98vh;
-            width: 98vh;
-          }
-
-          .grid-item {
-            padding: 10px;
-          }
-        } 
+      }
     </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="https://thecultch.com">
+          <img
+            src="cultch-logo-black-01.png"
+            width="200"
+            height="auto"
+            class="d-inline-block align-top"
+            alt="Logo"
+          />
+        </a>
+      </nav>
+    </header>
 
-
-</head>
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="https://thecultch.com">
-        <img src="cultch-logo-black-01.png" width="200" height="auto"  class="d-inline-block align-top" alt="Logo">
-      </a>
-    </nav>
-  </header>
-
-<h1 class="text-center fw-bold p-2">Beauty & The Beast</h1>
-<h1 class="text-center fw-bold p-2">Scavenger Hunt!</h1>
-<main>
-  <div class="grid-container">
-    <!-- Grid items -->
-    <div class="grid-item panto" ><img src="panto-P.png" alt="P"></div>
-    <div class="grid-item panto" ><img src="panto-A.png" alt="A"></div>
-    <div class="grid-item panto" ><img src="panto-N.png" alt="N"></div>
-    <div class="grid-item panto" ><img src="panto-T.png" alt="T"></div>
-    <div class="grid-item panto" ><img src="panto-O.png" alt="O"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="skunk.png" alt="Skunk"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="uramaki.png" alt="Salmon Roll Sushi"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="shoyu.png" alt="Soy Sauce"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="50-percent.png" alt="50% off sticker"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="pillow.png" alt="Pillow"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="" alt="Cherry"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="package.png" alt="Cardboard Box"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="tofu.png" alt="Tofu"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="full-moon.png" alt="Moon"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="mouse.png" alt="Mouse"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="pineapple.png" alt="Pinapple"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="coffee-cup.png" alt="Coffee Cup"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="scarf-recolored.png" alt="Scarf"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="drum-kit.png" alt="Drum Kit"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="mustache.png" alt="Mustache"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="mattress.png" alt="Mattress"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="maneki-neko.png" alt="Good Luck Cat"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="book.png" alt="Belle's Book"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="tomato.png" alt="Tomato"></div>
-    <div class="grid-item" onclick="changeColor(this)"><img src="" alt="one more"></div>
-  </div>
-</main>
-<div class="container">
-  <h2 class="pt-3 px-2">Can you find these items while watching the Panto?</h2>
-  <p class="px-2">It could be a costume, a prop, or something in the background. Click on them when you see them. Find all 20 to enter to win!</p>
-  <ol class="list-group list-group-numbered">
-    <li class="list-group-item">Skunk</li>
-    <li class="list-group-item">Salmon Roll Sushi</li>
-    <li class="list-group-item">Soy Sauce</li>
-    <li class="list-group-item">50% Off Sticker</li>
-    <li class="list-group-item">Pillow</li>
-    <li class="list-group-item">Cherry Blossoms</li>
-    <li class="list-group-item">Cardboard Box</li>
-    <li class="list-group-item">Tofu</li>
-    <li class="list-group-item">Moon</li>
-    <li class="list-group-item">Mouse</li>
-    <li class="list-group-item">Pineapple</li>
-    <li class="list-group-item">Coffee Cup</li>
-    <li class="list-group-item">Scarf</li>
-    <li class="list-group-item">Drum Kit</li>
-    <li class="list-group-item">Mustache</li>
-    <li class="list-group-item">Mattress</li>
-    <li class="list-group-item">Good Luck Cat</li>
-    <li class="list-group-item">Belle's book</li>
-    <li class="list-group-item">Tomato</li>
-    <li class="list-group-item">One more thing</li>
-  </ol>
-</div>
-
-  
+    <h1 class="text-center fw-bold p-2">Beauty & The Beast</h1>
+    <h1 class="text-center fw-bold p-2">Scavenger Hunt!</h1>
+    <main>
+      <div class="grid-container">
+        <!-- Grid items -->
+        <div class="grid-item panto"><img src="panto-P.png" alt="P" /></div>
+        <div class="grid-item panto"><img src="panto-A.png" alt="A" /></div>
+        <div class="grid-item panto"><img src="panto-N.png" alt="N" /></div>
+        <div class="grid-item panto"><img src="panto-T.png" alt="T" /></div>
+        <div class="grid-item panto"><img src="panto-O.png" alt="O" /></div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="skunk.png" alt="Skunk" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="uramaki.png" alt="Salmon Roll Sushi" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="shoyu.png" alt="Soy Sauce" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="50-percent.png" alt="50% off sticker" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="pillow.png" alt="Pillow" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="" alt="Cherry" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="package.png" alt="Cardboard Box" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="tofu.png" alt="Tofu" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="full-moon.png" alt="Moon" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="mouse.png" alt="Mouse" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="pineapple.png" alt="Pinapple" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="coffee-cup.png" alt="Coffee Cup" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="scarf-recolored.png" alt="Scarf" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="drum-kit.png" alt="Drum Kit" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="mustache.png" alt="Mustache" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="mattress.png" alt="Mattress" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="maneki-neko.png" alt="Good Luck Cat" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="book.png" alt="Belle's Book" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="tomato.png" alt="Tomato" />
+        </div>
+        <div class="grid-item" onclick="changeColor(this)">
+          <img src="" alt="one more" />
+        </div>
+      </div>
+    </main>
+    <div class="container">
+      <h2 class="pt-3 px-2">
+        Can you find these items while watching the Panto?
+      </h2>
+      <p class="px-2">
+        It could be a costume, a prop, or something in the background. Click on
+        them when you see them. Find all 20 to enter to win!
+      </p>
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item">Skunk</li>
+        <li class="list-group-item">Salmon Roll Sushi</li>
+        <li class="list-group-item">Soy Sauce</li>
+        <li class="list-group-item">50% Off Sticker</li>
+        <li class="list-group-item">Pillow</li>
+        <li class="list-group-item">Cherry Blossoms</li>
+        <li class="list-group-item">Cardboard Box</li>
+        <li class="list-group-item">Tofu</li>
+        <li class="list-group-item">Moon</li>
+        <li class="list-group-item">Mouse</li>
+        <li class="list-group-item">Pineapple</li>
+        <li class="list-group-item">Coffee Cup</li>
+        <li class="list-group-item">Scarf</li>
+        <li class="list-group-item">Drum Kit</li>
+        <li class="list-group-item">Mustache</li>
+        <li class="list-group-item">Mattress</li>
+        <li class="list-group-item">Good Luck Cat</li>
+        <li class="list-group-item">Belle's book</li>
+        <li class="list-group-item">Tomato</li>
+        <li class="list-group-item">One more thing</li>
+      </ol>
+    </div>
 
     <script>
       let foundCount = 0;
       function changeColor(element) {
-          //get grid-item's current color
-          const currentColor = window.getComputedStyle(element, null).getPropertyValue('background-color');
-          //if it's grey change to blue, otherwise change back to grey
-          const newColor = currentColor == 'rgb(245, 209, 212)' ? 'blue' : 'rgb(245, 209, 212)';
-          element.style.backgroundColor = newColor;
-          newColor == "blue" ? foundCount +=1 : foundCount -= 1;
-          console.log(foundCount);
-          if (foundCount >= 4) {
-            window.location.href = "complete.html" } 
+        //get grid-item's current color
+        const currentColor = window
+          .getComputedStyle(element, null)
+          .getPropertyValue("background-color");
+        //if it's grey change to blue, otherwise change back to grey
+        const newColor =
+          currentColor == "rgb(245, 209, 212)" ? "blue" : "rgb(245, 209, 212)";
+        element.style.backgroundColor = newColor;
+        newColor == "blue" ? (foundCount += 1) : (foundCount -= 1);
+        console.log(foundCount);
+        if (foundCount >= 4) {
+          window.location.href = "complete.html";
+        }
       }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
