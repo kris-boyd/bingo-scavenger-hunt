@@ -40,7 +40,7 @@
         flex: 1 0 20%; /* 20% width for each item, adjust as needed */
         box-sizing: border-box;
         padding: 7px;
-        background-color: #f5d1d4;
+        background-color: #f6e0e2;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -214,9 +214,9 @@
         const currentColor = window
           .getComputedStyle(element, null)
           .getPropertyValue("background-color");
-        //if it's grey change to blue, otherwise change back to grey
+        //if it's pink change to blue, otherwise change back to pink
         const newColor =
-          currentColor == "rgb(245, 209, 212)" ? "blue" : "rgb(245, 209, 212)";
+          currentColor == "rgb(246, 224, 226)" ? "blue" : "rgb(246, 224, 226)";
         element.style.backgroundColor = newColor;
         newColor == "blue" ? (foundCount += 1) : (foundCount -= 1);
         console.log(foundCount);
