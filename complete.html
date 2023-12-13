@@ -19,7 +19,10 @@
       body {
         font-family: tiempo, sans-serif;
         margin: 0;
+        padding: 0;
+        height: 100%;
         background-color: #aad9f4;
+        overflow: hidden;
       }
 
       #background-container {
@@ -33,13 +36,12 @@
       }
 
       #background-video {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         z-index: -1; /* Place the video behind other elements */
       }
 
@@ -65,16 +67,18 @@
       </nav>
     </header>
     <div id="background-container">
-      <video width="100%" autoplay muted playsinline>
-        <source
-          src="images/petals-transparent-hevc-safari.mp4"
-          type='video/mp4; codecs="hvc1"'
-        />
-        <source
-          src="images/petals-transparent-vp9-chrome.webm"
-          type="video/webm"
-        />
-      </video>
+      <div id="background-video">
+        <video autoplay muted playsinline>
+          <source
+            src="images/petals-transparent-hevc-safari.mp4"
+            type='video/mp4; codecs="hvc1"'
+          />
+          <source
+            src="images/petals-transparent-vp9-chrome.webm"
+            type="video/webm"
+          />
+        </video>
+      </div>
     </div>
 
     <div id="content-container" class="container">
